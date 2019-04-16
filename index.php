@@ -3,12 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Weather Stuff</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
         <?php
             require_once 'settings.php';
-            //$src = file_get_contents($url);
-            $src = file_get_contents("test.json");
+            $src = file_get_contents($url);
+            //$src = file_get_contents("test.json");
             $obj = json_decode($src, true);
             
             //Reads weather for the next 5 days
@@ -49,23 +53,11 @@
                 }
             }
             
-            echo "<pre>";
-            print_r($highestTemp);
-            echo "</pre>";
-            
-            echo "<pre>";
-            print_r($lowestTemp);
-            echo "</pre>";
-            
-            echo "<pre>";
-            print_r($rainPerDay);
-            echo "</pre>";
-            
-            /*
-            echo "<pre>";
-            print_r($obj);
-            echo "</pre>";
-            */
+            require_once 'chartMaker.php';
         ?>
+        
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>    
+        
     </body>
 </html>
