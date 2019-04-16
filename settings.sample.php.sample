@@ -1,0 +1,7 @@
+<?php
+
+$baseurl = "https://api.openweathermap.org/data/2.5/forecast?q=";
+$location = "Hawaii";
+$unit = "metric";
+$appid = "XXXXXXXXXXXXXXXXXXXXXXXXXX";
+$url = $baseurl.$location."&units=".$unit."&appid=".$appid;
